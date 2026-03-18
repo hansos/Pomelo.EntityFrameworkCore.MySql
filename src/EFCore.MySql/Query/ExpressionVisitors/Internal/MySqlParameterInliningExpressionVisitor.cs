@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Utilities;
@@ -13,6 +14,8 @@ using Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
 using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
 
 namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+
+#nullable enable
 
 /// <summary>
 /// Inject parameter inlining expressions where parameters are not supported for some reason.
@@ -23,8 +26,7 @@ public class MySqlParameterInliningExpressionVisitor : ExpressionVisitor
     private readonly ISqlExpressionFactory _sqlExpressionFactory;
     private readonly IMySqlOptions _options;
 
-    private IReadOnlyDictionary<string, object> _parametersValues;
-    private bool _canCache;
+    private IReadOnlyDictionary<string, object?>? _parametersValues;
 
     private bool _shouldInlineParameters;
 
@@ -38,19 +40,14 @@ public class MySqlParameterInliningExpressionVisitor : ExpressionVisitor
         _options = options;
     }
 
-    public virtual Expression Process(Expression expression, IReadOnlyDictionary<string, object> parametersValues, out bool canCache)
+    public virtual Expression Process(Expression expression, ParametersCacheDecorator parametersDecorator)
     {
         Check.NotNull(expression, nameof(expression));
 
-        _parametersValues = parametersValues;
-        _canCache = true;
+        _parametersValues = parametersDecorator.GetAndDisableCaching();
         _shouldInlineParameters = false;
 
-        var result = Visit(expression);
-
-        canCache = _canCache;
-
-        return result;
+        return Visit(expression);
     }
 
     protected override Expression VisitExtension(Expression extensionExpression)
@@ -103,12 +100,10 @@ public class MySqlParameterInliningExpressionVisitor : ExpressionVisitor
             return sqlParameterExpression;
         }
 
-        _canCache = false;
-
         return new MySqlInlinedParameterExpression(
             sqlParameterExpression,
             (SqlConstantExpression)_sqlExpressionFactory.Constant(
-                _parametersValues[sqlParameterExpression.Name],
+                _parametersValues![sqlParameterExpression.Name]!,
                 sqlParameterExpression.TypeMapping));
     }
 
