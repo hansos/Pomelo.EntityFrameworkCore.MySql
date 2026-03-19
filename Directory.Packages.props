@@ -3,7 +3,7 @@
     <!-- We shoud try: [10.0.0,10.1.0-0)
          `-0` is the smallest possible prerelease version according to SemVer2.
     -->
-    <EFCoreVersion>[10.0.0,10.0.999]</EFCoreVersion>
+    <EFCoreVersion>10.0.5</EFCoreVersion>
   </PropertyGroup>
 
   <ItemGroup Label="Dependencies">
@@ -50,11 +50,11 @@
     <PackageVersion Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
 
     <!-- Needed when using EFCore.Design assembly from local EF Core repository. -->
-    <PackageVersion Include="Microsoft.CodeAnalysis" Version="4.14.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.14.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.VisualBasic.Features" Version="4.14.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Features" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.VisualBasic.Features" Version="5.0.0" />
     <PackageVersion Include="System.Text.Json" Version="10.0.5" />
   </ItemGroup>
 </Project>

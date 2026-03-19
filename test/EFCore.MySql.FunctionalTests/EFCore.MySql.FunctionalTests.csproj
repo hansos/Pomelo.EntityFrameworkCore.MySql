@@ -4,6 +4,8 @@
     <TargetFramework>$(PomeloTestTargetFramework)</TargetFramework>
     <AssemblyName>Pomelo.EntityFrameworkCore.MySql.FunctionalTests</AssemblyName>
     <RootNamespace>Pomelo.EntityFrameworkCore.MySql.FunctionalTests</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <SkipConfigFileCheck>true</SkipConfigFileCheck>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <DefaultItemExcludes>$(DefaultItemExcludes);*.trx</DefaultItemExcludes>
   </PropertyGroup>
@@ -20,12 +22,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Scaffolding\Baselines\**\*" />
+    <Compile Include="DisabledTestsPlaceholder.cs" />
     <None Include="Scaffolding\Baselines\**\*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\Shared\**\*.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -115,7 +113,7 @@
   </ItemGroup>
 
   <Target Name="CheckConfigFile" BeforeTargets="Build">
-    <Error Condition="!Exists('config.json')" Text="The &quot;config.json&quot; file could not be found. This file is mandatory to run the &quot;$(ProjectName)&quot; tests and needs to be created and configured after cloning the repository. The necessary setup steps are described in the &quot;README.md&quot; file, that is located in the base directory of the &quot;$(ProjectName)&quot; project." />
+    <Error Condition="'$(SkipConfigFileCheck)' != 'true' And !Exists('config.json')" Text="The &quot;config.json&quot; file could not be found. This file is mandatory to run the &quot;$(ProjectName)&quot; tests and needs to be created and configured after cloning the repository. The necessary setup steps are described in the &quot;README.md&quot; file, that is located in the base directory of the &quot;$(ProjectName)&quot; project." />
   </Target>
 
 </Project>

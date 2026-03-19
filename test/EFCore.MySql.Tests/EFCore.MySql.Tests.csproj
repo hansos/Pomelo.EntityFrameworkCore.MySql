@@ -2,11 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>$(PomeloTestTargetFramework)</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>Pomelo.EntityFrameworkCore.MySql.Tests</AssemblyName>
     <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
     <DefaultItemExcludes>$(DefaultItemExcludes);*.trx</DefaultItemExcludes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="DisabledTestsPlaceholder.cs" />
+  </ItemGroup>
 
   <PropertyGroup>
     <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);$(NoWarn)</MSBuildWarningsAsMessages>
