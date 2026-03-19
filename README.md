@@ -11,6 +11,8 @@
 
 I consider this a temporary fork while waiting for an official version of [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql) to become available.
 
+See [Fork Changes (.NET 10 / EF Core 10)](FORK-CHANGES.md) for a detailed summary of the updates in this solution.
+
 The library compiles successfully, and a prerelease NuGet package has been created.
 
 This version is already in use in an application under development and has been tested in that context.

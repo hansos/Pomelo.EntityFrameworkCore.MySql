@@ -23,16 +23,24 @@ This document tracks the execution of the Pomelo.EntityFrameworkCore.MySql solut
 
 **References**: Plan §5 Steps 1-4, Plan §7 Package Update Reference, Plan §8 Breaking Changes Catalog
 
-- [✓] (1) Update `global.json` SDK version to `10.0.100` per Plan §5 Step 1
+- [▶] (1) Update `global.json` SDK version to `10.0.100` per Plan §5 Step 1
 
-- [✓] (2) `global.json` updated successfully (**Verify**)
-- [✓] (3) Update `Directory.Build.props` framework properties per Plan §5 Step 2 (all 6 properties: `PomeloTargetFramework`, `PomeloTestTargetFramework`, `EfCoreTargetFramework`, `EfCoreTestTargetFramework`, `MySqlConnectorTargetFramework`, `MySqlConnectorDependencyInjectionTargetFramework` from `net8.0`/`net9.0` → `net10.0`)
-- [✓] (4) All framework properties updated to `net10.0` (**Verify**)
-- [✓] (5) Update `Directory.Packages.props` per Plan §7 Package Update Reference (update `EFCoreVersion` property to `[10.0.0,10.0.999]` and all 16 individual package versions listed)
-- [✓] (6) All package versions updated per Plan §7 (**Verify**)
-- [✓] (7) Restore all dependencies
-- [✓] (8) All dependencies restored successfully (**Verify**)
-- [▶] (9) Build solution and fix all compilation errors per Plan §8 Breaking Changes Catalog (focus: TimeSpan overload ambiguities in 56 locations across FunctionalTests and IntegrationTests; WebHost migration in IntegrationTests\Program.cs; DependencyModel API in Tests\BuildReference.cs; string.Join ambiguity in IntegrationTests\GeneratedTypesTest.cs)
+- [ ] (2) `global.json` updated successfully (**Verify**)
+
+- [ ] (3) Update `Directory.Build.props` framework properties per Plan §5 Step 2 (all 6 properties: `PomeloTargetFramework`, `PomeloTestTargetFramework`, `EfCoreTargetFramework`, `EfCoreTestTargetFramework`, `MySqlConnectorTargetFramework`, `MySqlConnectorDependencyInjectionTargetFramework` from `net8.0`/`net9.0` → `net10.0`)
+
+- [ ] (4) All framework properties updated to `net10.0` (**Verify**)
+
+- [ ] (5) Update `Directory.Packages.props` per Plan §7 Package Update Reference (update `EFCoreVersion` property to `[10.0.0,10.0.999]` and all 16 individual package versions listed)
+
+- [ ] (6) All package versions updated per Plan §7 (**Verify**)
+
+- [ ] (7) Restore all dependencies
+
+- [ ] (8) All dependencies restored successfully (**Verify**)
+
+- [ ] (9) Build solution and fix all compilation errors per Plan §8 Breaking Changes Catalog (focus: TimeSpan overload ambiguities in 56 locations across FunctionalTests and IntegrationTests; WebHost migration in IntegrationTests\Program.cs; DependencyModel API in Tests\BuildReference.cs; string.Join ambiguity in IntegrationTests\GeneratedTypesTest.cs)
+
 - [ ] (10) Solution builds with 0 errors (**Verify**)
 
 ---
@@ -55,4 +63,3 @@ This document tracks the execution of the Pomelo.EntityFrameworkCore.MySql solut
 - [ ] (1) Commit all changes with message: "Upgrade to .NET 10.0 (LTS)"
 
 ---
-
