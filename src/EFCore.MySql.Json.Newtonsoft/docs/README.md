@@ -2,6 +2,8 @@
 
 _Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft_ adds JSON support for `Newtonsoft.Json` (the Newtonsoft JSON/Json.NET stack) to [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql).
 
+`Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft` `10.x` is intended for use with `Pomelo.EntityFrameworkCore.MySql` `10.x` (`EF Core 10.0.x` / `.NET 10.0+`).
+
 ## How to Use
 
 ```csharp

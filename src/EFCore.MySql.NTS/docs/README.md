@@ -2,6 +2,8 @@
 
 _Pomelo.EntityFrameworkCore.MySql.NetTopologySuite_ adds spatial support for [NetTopologySuite](https://github.com/NetTopologySuite/NetTopologySuite) to [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql).
 
+`Pomelo.EntityFrameworkCore.MySql.NetTopologySuite` `10.x` is intended for use with `Pomelo.EntityFrameworkCore.MySql` `10.x` (`EF Core 10.0.x` / `.NET 10.0+`).
+
 ## How to Use
 
 ```csharp

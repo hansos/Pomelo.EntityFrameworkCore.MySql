@@ -2,6 +2,8 @@
 
 _Pomelo.EntityFrameworkCore.MySql.Json.Microsoft_ adds JSON support for `System.Text.Json` (the Microsoft JSON stack) to [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql).
 
+`Pomelo.EntityFrameworkCore.MySql.Json.Microsoft` `10.x` is intended for use with `Pomelo.EntityFrameworkCore.MySql` `10.x` (`EF Core 10.0.x` / `.NET 10.0+`).
+
 ## How to Use
 
 ```csharp

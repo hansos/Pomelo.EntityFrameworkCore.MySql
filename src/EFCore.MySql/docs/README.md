@@ -4,7 +4,21 @@ _Pomelo.EntityFrameworkCore.MySql_ is the Entity Framework Core (EF Core) provid
 
 It is build on top of [MySqlConnector](https://github.com/mysql-net/MySqlConnector).
 
+`Pomelo.EntityFrameworkCore.MySql` `10.x` targets `EF Core 10.0.x` and requires `.NET 10.0+`.
+
+## Fork Status
+
+I consider this a temporary fork while waiting for an official version of [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql) to become available.
+
+The library compiles successfully, and a prerelease NuGet package has been created.
+
+This version is already in use in an application under development and has been tested in that context.
+
 ## How to Use
+
+```xml
+<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="10.0.0" />
+```
 
 ```csharp
 public class Startup
