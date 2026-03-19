@@ -14,7 +14,7 @@ Integration and Performance Tests
 **Running Performance Tests**
 
 1. Configure the database.
-2. Run `dotnet run`. This will start a .NET Core MVC API application on "http://localhost:5000".
+2. Run `dotnet run`. This will start a .NET 10 MVC API application on "http://localhost:5000".
 
 Methods:
 
