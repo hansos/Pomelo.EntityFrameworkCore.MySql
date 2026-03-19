@@ -1,6 +1,6 @@
 # Pomelo.EntityFrameworkCore.MySql (.NET 10 temporary fork)
 
-[![Build status](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml)
+[![Build status](https://github.com/hansos/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hansos/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml)
 [![Stable release feed for official builds](https://img.shields.io/nuget/v/Pomelo.EntityFrameworkCore.MySql.svg?style=flat-square&label=Stable)](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/) [![Prerelease feed for official builds](https://img.shields.io/nuget/vpre/Pomelo.EntityFrameworkCore.MySql.svg?style=flat-square&label=Prerelease)](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/)
 [![Nightly build feed for release builds](https://img.shields.io/myget/pomelo/vpre/Pomelo.EntityFrameworkCore.MySql.svg?label=Nightly)](https://www.myget.org/feed/pomelo/package/nuget/Pomelo.EntityFrameworkCore.MySql)
 [![Nightly build feed for debugging enabled builds](https://img.shields.io/myget/pomelo-debug/vpre/Pomelo.EntityFrameworkCore.MySql.svg?label=Debug)](https://www.myget.org/feed/pomelo-debug/package/nuget/Pomelo.EntityFrameworkCore.MySql)
@@ -56,56 +56,12 @@ Currently tested versions are:
 - MariaDB 10.6 (LTS)
 - MariaDB 10.5 (LTS)
 
-## Schedule and Roadmap
-
-| Milestone | Status   | Release Date |
-| --------- | -------- | ------------ |
-| 10.0.0    | Released | TBD          |
-| 9.0.0     | Released | 2025-08-17   |
-| 8.0.3     | Released | 2025-03-02   |
-| 7.0.0     | Released | 2023-01-16   |
-| 6.0.3     | Released | 2024-03-16   |
-| 5.0.4     | Released | 2022-01-22   |
-| 3.2.7     | Released | 2021-10-04   |
-
 ### Upgrade Notes (10.0)
 
 - `Pomelo.EntityFrameworkCore.MySql` `10.x` targets `EF Core 10.0.x`.
 - The minimum supported runtime is `.NET 10.0`.
 - This repository has been validated with `EF Core 10.0.5`.
 - Applications staying on `.NET 8/9` should continue using the corresponding `8.x/9.x` package lines.
-
-## Nightly Builds
-
-To use nightly builds from our Azure DevOps feed, add a `NuGet.config` file to your solution root with the following content and enable _prereleases_:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-    <packageSources>
-        <add key="pomelo-nightly" value="https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json" />
-        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-    </packageSources>
-</configuration>
-```
-
-### Feeds
-
-Feeds that contain optimized (`Release` configuration) builds:
-
-* `https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json`
-* `https://www.myget.org/F/pomelo/api/v3/index.json`
-
-Feeds that contain debugging enabled unoptimized (`Debug` configuration) builds:
-
-* `https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-debug/nuget/v3/index.json`
-* `https://www.myget.org/F/pomelo-debug/api/v3/index.json`
-
-The AZDO `nupkg` packages always contain `.pdb` files.
-
-The MyGet `nupkg` packages only contain `.pdb` files for their debug builds. For optimized builds, the symbols are packed in a `snupkg` file and are available via the `https://www.myget.org/F/pomelo/api/v2/symbolpackage/` symbol server URL.
-
-All `.pdb` files use Source Link.
 
 ## Getting Started
 
